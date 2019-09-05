@@ -1,7 +1,5 @@
 import java.util.Formatter;
 
-import lab1.IntList;
-
 /**
  * A naked recursive list of integers, similar to what we saw in lecture 3, but
  * with a large number of additional methods.
