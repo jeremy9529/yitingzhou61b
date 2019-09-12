@@ -108,19 +108,6 @@ public class LinkedListDeque<PlaceholderType> {
 	
 	
 	public static void main(String[] args) {
-		LinkedListDeque<String> Dllist = new LinkedListDeque<>();
-		Dllist.addFirst("a");
-        Dllist.addLast("b");
-        Dllist.addLast("c");
-       // Dllist.removeFirst();
-        //Dllist.removeLast();
-        //Dllist.removeLast();
-        Dllist.printDeque();
-        System.out.println();
-        System.out.println(Dllist.size());
-        System.out.println(Dllist.isEmpty());
-        System.out.println(Dllist.get(1));
-        System.out.println(Dllist.getRecursive(1));
     }
 
 }
