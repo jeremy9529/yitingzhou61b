@@ -1,10 +1,10 @@
 
-public class LinkedListDeque<PlaceholderType> {
+public class LinkedListDeque<T> {
 	private class Dlist{
-		private PlaceholderType item;
+		private T item;
 		private Dlist rest;
 		private Dlist pre;
-		private Dlist(PlaceholderType i, Dlist r,Dlist p){
+		private Dlist(T i, Dlist r,Dlist p){
 			item = i;
 			rest = r;
 			pre = p;
@@ -18,13 +18,13 @@ public class LinkedListDeque<PlaceholderType> {
         size = 0;
     }
 	
-	public void addFirst(PlaceholderType item) {
+	public void addFirst(T item) {
 		sentinel.rest = new Dlist(item,sentinel, sentinel.rest);
         sentinel.rest.rest.pre = sentinel.rest;
         size += 1;
 	}
 	
-	public void addLast(PlaceholderType item) {
+	public void addLast(T item) {
 		sentinel.pre = new Dlist(item,sentinel, sentinel.pre);
 		sentinel.pre.pre.rest = sentinel.pre;
 		size += 1;
@@ -50,11 +50,11 @@ public class LinkedListDeque<PlaceholderType> {
 		}
 	}
     
-	public PlaceholderType removeFirst() {
+	public T removeFirst() {
 		if(size == 0) {
 			return null;
 		}else {
-			PlaceholderType firstitem = sentinel.rest.item;
+			T firstitem = sentinel.rest.item;
 			sentinel.rest.rest.pre = sentinel;
 			sentinel.rest = sentinel.rest.rest;
 	        size -= 1;
@@ -62,11 +62,11 @@ public class LinkedListDeque<PlaceholderType> {
 		}
 	}
 	
-	public PlaceholderType removeLast() {
+	public T removeLast() {
 		if(size == 0) {
 			return null;
 		}else {
-			PlaceholderType lastitem = sentinel.pre.item;
+			T lastitem = sentinel.pre.item;
 			sentinel.pre.pre.rest = sentinel;
 			sentinel.pre = sentinel.pre.pre;
 	        size -= 1;
@@ -75,7 +75,7 @@ public class LinkedListDeque<PlaceholderType> {
 		
 	}
 	
-	public PlaceholderType get(int index) {
+	public T get(int index) {
 		Dlist temp = sentinel;
 		int i = 0;
 		if(index > this.size()-1) {
@@ -90,7 +90,7 @@ public class LinkedListDeque<PlaceholderType> {
 		
 	}
 	
-	public PlaceholderType getRecursive(int index) {
+	public T getRecursive(int index) {
 		if(index > this.size()-1) {
 			return null;
 		}else {
@@ -98,7 +98,7 @@ public class LinkedListDeque<PlaceholderType> {
 		}
 	}
 	
-	public PlaceholderType helper(Dlist temp, int i) {
+	public T helper(Dlist temp, int i) {
 		if(i == 0) {
 			return temp.item;
 		}else {
